@@ -23,9 +23,9 @@ public class Courses {
 
     private String course_requirements;
 
-    /*@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Student student;*/
+    private Student student;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="course_id", referencedColumnName = "course_id")
