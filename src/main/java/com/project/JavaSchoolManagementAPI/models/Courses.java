@@ -17,14 +17,14 @@ public class Courses {
     @Id
     private Long course_id;
 
-    private String course_name;
+    private String name;
 
     private String course_description;
 
     private String course_requirements;
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    @JoinColumn(name = "student_id", referencedColumnName = "student_id")
     private Student student;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

@@ -18,11 +18,11 @@ public class Businesslogic {
     CoursesRepo coursesRepo;
 
 
-    public  void register(Student student_name, String course_name){
-        Student student = studentRepo.findByName(student_name);
+    public  void register(Student first_name, String course_name){
+        Student student = studentRepo.findByFirstname(first_name);
         Courses course = new Courses();
-        course.setCourse_name(course_name);
-        course.setStudent(student_name);
+        course.setName(course_name);
+        course.setStudent(first_name);
 
         student.getCourses().add(course);
 
