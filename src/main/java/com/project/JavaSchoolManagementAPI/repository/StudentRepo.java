@@ -6,9 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepo extends JpaRepository<StudentDTO, Long> {
-    StudentDTO save(StudentDTO student);
+public interface StudentRepo extends JpaRepository<Student, Long> {
+    Student findByFirstname(String firstname);
 
-    //StudentDTO findByFirstname(StudentDTO student);
-    StudentDTO findByFirstname(StudentDTO student);
+    Student findByStudentId(Long id);
 }

@@ -14,12 +14,12 @@ import java.util.List;
 @Data
 @Builder
 public class StudentDTO {
-    private  Long student_id;
+    private  Long studentId;
     private String firstname;
     private String lastname;
     private int age;
-    //leave out email address
-    //private String email_address;
+    //leave out password
+    private String email_address;
     private String address;
     private List<CoursesDTO> courses;
 }

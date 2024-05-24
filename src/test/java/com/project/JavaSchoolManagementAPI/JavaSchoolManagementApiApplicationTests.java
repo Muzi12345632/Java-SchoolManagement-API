@@ -5,6 +5,7 @@ import com.project.JavaSchoolManagementAPI.dto.StudentDTO;
 import com.project.JavaSchoolManagementAPI.models.Courses;
 import com.project.JavaSchoolManagementAPI.models.Department;
 import com.project.JavaSchoolManagementAPI.models.Student;
+import com.project.JavaSchoolManagementAPI.repository.CoursesRepo;
 import com.project.JavaSchoolManagementAPI.repository.StudentRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ class JavaSchoolManagementApiApplicationTests {
 
 	@Autowired
 	StudentRepo studentRepo;
+	@Autowired
+	CoursesRepo coursesRepo;
 
 
 
@@ -29,7 +32,7 @@ class JavaSchoolManagementApiApplicationTests {
 				//.courses((List<Courses>) courses)
 				.build();
 
-		CoursesDTO courses = CoursesDTO.builder()
+		Courses courses = Courses.builder()
 				.course_id(12121L)
 				.name("Mathmatics")
 				.course_description("Addition,Subtraction")
@@ -46,7 +49,8 @@ class JavaSchoolManagementApiApplicationTests {
 				.courses(List.of())
 				.build();
 
-		studentRepo.save(student);
+		//studentRepo.save(student);
+		coursesRepo.save(courses);
 
 	}
 
