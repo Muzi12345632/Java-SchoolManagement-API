@@ -1,6 +1,8 @@
 package com.project.JavaSchoolManagementAPI.service;
 
 
+import com.project.JavaSchoolManagementAPI.dto.CoursesDTO;
+import com.project.JavaSchoolManagementAPI.dto.StudentDTO;
 import com.project.JavaSchoolManagementAPI.models.Courses;
 import com.project.JavaSchoolManagementAPI.models.Student;
 import com.project.JavaSchoolManagementAPI.repository.CoursesRepo;
@@ -18,11 +20,11 @@ public class Businesslogic {
     CoursesRepo coursesRepo;
 
 
-    public  void register(Student first_name, String course_name){
-        Student student = studentRepo.findByFirstname(first_name);
-        Courses course = new Courses();
+    public  void register(StudentDTO firstname, String course_name){
+        StudentDTO student = studentRepo.findByFirstname(firstname);
+        CoursesDTO course = new CoursesDTO();
         course.setName(course_name);
-        course.setStudent(first_name);
+        course.setStudent(firstname);
 
         student.getCourses().add(course);
 

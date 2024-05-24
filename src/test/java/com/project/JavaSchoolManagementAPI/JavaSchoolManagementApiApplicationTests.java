@@ -1,5 +1,7 @@
 package com.project.JavaSchoolManagementAPI;
 
+import com.project.JavaSchoolManagementAPI.dto.CoursesDTO;
+import com.project.JavaSchoolManagementAPI.dto.StudentDTO;
 import com.project.JavaSchoolManagementAPI.models.Courses;
 import com.project.JavaSchoolManagementAPI.models.Department;
 import com.project.JavaSchoolManagementAPI.models.Student;
@@ -27,22 +29,21 @@ class JavaSchoolManagementApiApplicationTests {
 				//.courses((List<Courses>) courses)
 				.build();
 
-		Courses courses = Courses.builder()
+		CoursesDTO courses = CoursesDTO.builder()
 				.course_id(12121L)
-				.course_name("Mathmatics")
+				.name("Mathmatics")
 				.course_description("Addition,Subtraction")
 				.course_requirements("5 O-levels")
 				.department(department)
 				.build();
 
-		Student student = Student.builder()
+		StudentDTO student = StudentDTO.builder()
 				.student_id(3322L)
 				.firstname("Muziwandile")
 				.lastname("Nkomo")
 				.age(26)
-				.email_address("muziwandilenko@gmail.com")
 				.address("4308 Luveve")
-				.courses(List.of(courses))
+				.courses(List.of())
 				.build();
 
 		studentRepo.save(student);
