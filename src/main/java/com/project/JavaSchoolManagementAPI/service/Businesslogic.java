@@ -35,7 +35,7 @@ public class Businesslogic {
     }
 
     //create new student
-    public Student createStudent(Student student){
+    public StudentDTO createStudent(Student student){
         String encodedPassword = passwordEncoder.encode(student.getPassword());
         Student newstudent = Student.builder()
                 .studentId(student.getStudentId())
@@ -49,7 +49,7 @@ public class Businesslogic {
         //save student
         studentRepo.save(newstudent);
 
-        return newstudent;
+        return convertToDTO(newstudent);
 
     }
 

@@ -26,7 +26,7 @@ public class maincontroller {
     }
 
     @PostMapping("/createStudent")
-    public Student createStudent(@RequestBody Student student){
+    public StudentDTO createStudent(@RequestBody Student student){
         return businesslogic.createStudent(student);
     }
 

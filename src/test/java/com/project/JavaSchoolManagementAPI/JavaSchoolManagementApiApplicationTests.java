@@ -41,7 +41,7 @@ class JavaSchoolManagementApiApplicationTests {
 				.build();
 
 		StudentDTO student = StudentDTO.builder()
-				.student_id(3322L)
+				.studentId(3322L)
 				.firstname("Muziwandile")
 				.lastname("Nkomo")
 				.age(26)
